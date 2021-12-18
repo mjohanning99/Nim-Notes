@@ -1,4 +1,8 @@
 # Loops
+```toc
+style: number
+```
+----
 Nim has a number of different loops, just like Ruby does too. The most commonly used ones are the for- and while-loops.
 
 ## For-loop
@@ -53,3 +57,39 @@ for i, l in programming:
 ```
 
 ## While loop
+While loops are also quite similar to those found in Ruby. The ```inc``` value can be used in a similar manner as the ```++``` found in a variety of other programming language (i. e. to increment a variable value by one). An example of a simple while look is the following: —
+
+```nim 
+var a = 1
+while a * a < 10:
+	echo "a is: ", a
+	inc a
+```
+
+## Break and Continue
+There are two special commands that can be used with loops (mostly while loops), namely ```break``` and ```continue```.
+
+### Break
+As with other programming languages, the ```break``` command can be used to prematurely exit a loop. The following is an example of that: —
+
+```nim
+var year: int = 2021
+while year < 2050:
+	echo year
+	inc year
+	if year == 2030:
+		break # Output: 2021, 2022 … 2029
+```
+
+### Continue
+The ```continue``` statement immediately executes the next iteration of a loop; in this way, certain values can be “skipped”, so to speak. An example is the following: —
+
+```nim
+var name = "Marvin Johanning"
+
+for l in name:
+	if l == "n":
+		continue
+	echo l # Will remove all "n"s from my name
+```
+<div style="page-break-after: always;"></div>

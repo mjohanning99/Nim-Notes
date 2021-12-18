@@ -1,4 +1,8 @@
 # Data Types
+```toc
+style: number
+```
+----
 As with most other programming languages, there are a number of data types that can be defined when declaring a [[Variables|variable]] or [[Immutable Values and Declarations|constant]]. The following is a list of these data types.
 
 ## Numbers
@@ -85,3 +89,106 @@ Booleans are declared using ```bool```. The relational operators are basically t
 
 #### Logical Operators
 The logical operators are basically the same as in Ruby, though there do not appear to be “shortcuts” as in Ruby, such as ```||``` for ```or```. 
+
+
+## Containers 
+
+Containers are iterable data types such as arrays or tuples. As they are iterable, [[Loops|loops]] can be used to iterate through their values. The simplest of these containers is the array.
+
+### Array
+An important aspect to know about arrays in Nim is that an array’s elements must _all_ be of the same data type; mixing different data types within the same array will result in an error. Additionally, an array’s size must be known at compile time; their size is, therefore, immutable (unlike in Ruby). 
+
+Arrays are declared using ```array[<length>, <type>]```. If the length and the type can be inferred from the elements passed to the array, the declaration can be omitted. An array’s elements are enclosed inside square brackets, as in Ruby. Here are a few examples: —
+
+```nim
+var
+	years: array[5, int] 	 = [2021, 2020, 2019, 2005, 1999]
+	names: array[3, string]  = ["Ἡρόδοτος", "Marvin", "Πλάτων"]
+	💕: array = ["💜", "💓", "💗", "💘", "💝"]
+```
+
+### Sequences
+Sequences, unlike arrays, have neither an immutable length nor does their length need to be known at compile-time. Sequences are defined by using ```seq[<data type>]``` and its elements are placed inside square brackets prepended with an @ sign as follows: ```@[<values>]```.  The following is an example of such a sequence: —
+
+```nim
+var
+	hyperSequence: seq[string] = @["Jag", "dricker", "kaffe"]
+	inferredSequence = @[1, 2, 3]
+```
+
+#### Adding to a Sequence
+Elements can be added (appended) onto a sequence using the same ```add``` function that was used to append a string to another string. The sequence must be mutable (i. e. declared using ```var```) and and data type of the element being added must be the same as the data type of the sequence: —
+
+```nim
+name: seq[string] = @["M", "a", "r", "v", "i"]
+name.add("n")
+echo name # Output: @["M", "a", "r", "v", "i", "n"]
+```
+
+#### Finding out a Sequence’s Length
+Finding out a sequence’s length can be achieved by using the rather aptly named ```len``` function as follows: —
+
+```nim
+name: seq[string] = @["M", "a", "r", "v", "i", "n"]
+echo name.len # Output: 6
+```
+
+### Slicing and Indexing
+Slicing and indexing can be used to get a specific values — or series of values — from a container. Indexing, as with virtually all other programming languages (except for Lua, as far as I know), starts at 0.
+
+#### Indexing
+The syntax here is identical to Ruby, i. e. ```<container>[<index>]```.  A caret can be prepended to the index to index “from the back” (i. e. the last element becomes the first). The last element has index ```^1```.  Below a short example: —
+
+```nim
+var john: array[5, string] = ["ἐν", "ἀρχῇ", "ἦν", "ὁ", "λόγος"]
+
+echo john[0] # Output: ἐν
+echo john[^1] # Output: λόγος
+```
+
+#### Slicing
+Slicing is basically the same as indexing, just that it allows one to get a series of elements using one statement. The ```start ... stop``` syntax can be used here as well: —
+
+```nim
+var 
+	john: array[5, string] = ["ἐν", "ἀρχῇ", "ἦν", "ὁ", "λόγος"]
+	name: seq[string] = @["M", "a", "r", "v", "i", "n"]
+
+echo john[1..2] # Output: @["ἀρχῇ", "ἦν"]
+echo name[0..5] # Output: @["M", "a", "r", "v", "i", "n"]
+```
+
+#### Assigning New Values
+Both slicing and indexing can be used to assign a new value to a sequence or array — or to change an element: —
+
+```nim
+var
+	name: seq[string] = @["G", "u", "ð", "m", "u", "n", "d"]
+	years: array[3, int] = [2019, 2020, 2021]
+	hyperYears: array[3, int]
+	
+for i in 0 .. 2:
+	hyperYears[i] = years[i] * 2
+
+name[0] = "K"
+
+echo hyperYears # Output: [4038, 4040, 4042]
+echo name # Output: @["K", "u", "ð", "m", "u", "n", "d"]
+```
+
+### Tuples
+Tuples contain heterogeneous data, i. e. elements of a tuple can be of different data types. Like arrays, they have a fixed size. A tuple’s elements are enclosed within parentheses: —
+
+```nim
+let hyperTuple = ("Marvin", 1999, 'M')
+```
+
+It is also possible to assign a name to each of the fields of a tuple to distinguish them more easily: —
+
+```nim
+let hyperTuple = (name: "Marvin", year: 1999, gender: 'M')
+
+echo hyperTuple.name # Output: Marvin
+```
+
+<div style="page-break-after: always;"></div>

@@ -1,4 +1,8 @@
 # If Statements
+```toc
+style: number
+```
+----
 If statements are part of _control flow_, i. e. only executing a certain piece of code when a condition is fulfilled. If statements in Nim are written as follows: —
 
 ```nim
@@ -42,3 +46,4 @@ else:
 ```
 
 [[Case Statements]] are quite similar to if statements.
+<div style="page-break-after: always;"></div>

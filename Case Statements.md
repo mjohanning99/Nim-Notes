@@ -1,4 +1,8 @@
 # Case Statements 
+```toc
+style: number
+```
+----
 Case statements work quite similarly to those found in Ruby. Their syntax differs somewhat, however: —
 
 ```nim
@@ -31,3 +35,4 @@ case 🎄
 of "Christmas", "Yule":
 	echo "Merry Christmas!"
 ```
+<div style="page-break-after: always;"></div>

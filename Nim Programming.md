@@ -10,3 +10,7 @@ author: Marvin Johanning
 ![[If Statements]]
 ![[Case Statements]]
 ![[Loops]]
+![[Procedures (Functions)]]
+
+%% Exercises and other back-matter stuff. %% 
+![[Exercises]]

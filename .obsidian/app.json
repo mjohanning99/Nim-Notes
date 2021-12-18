@@ -4,7 +4,8 @@
     "Nim",
     "Booleans",
     "iterable",
-    "iterables"
+    "iterables",
+    "prepended"
   ],
   "pdfExportSettings": {
     "pageSize": "Letter",
@@ -13,5 +14,8 @@
     "downscalePercent": 100
   },
   "vimMode": true,
-  "promptDelete": false
+  "promptDelete": false,
+  "alwaysUpdateLinks": false,
+  "showFrontmatter": false,
+  "showLineNumber": true
 }
