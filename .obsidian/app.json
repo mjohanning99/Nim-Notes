@@ -1,7 +1,10 @@
 {
   "spellcheck": true,
   "spellcheckDictionary": [
-    "Nim"
+    "Nim",
+    "Booleans",
+    "iterable",
+    "iterables"
   ],
   "pdfExportSettings": {
     "pageSize": "Letter",
@@ -9,5 +12,6 @@
     "margin": "0",
     "downscalePercent": 100
   },
-  "vimMode": true
+  "vimMode": true,
+  "promptDelete": false
 }

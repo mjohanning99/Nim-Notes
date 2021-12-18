@@ -53,4 +53,4 @@ var
 
 The indentation here is vital, as Nim uses spaces to delimit the scope of a declaration, much like Python (but quite unlike Ruby); indentation can, thus, be seen as a replacement for curly brackets in programming languages such as PHP or Rust or the ```end``` placed after a declaration (such as a ```def```).  The only type of indentation that can, however, be used is __spaces__. The editor must, thus, convert tabs into any number of spaces (like two or four). 
 
-There are two other ways of defining values, ```let``` and ```const```. These are under [[Immutable Values and Declarations]].
+There are two other ways of defining values, ```let``` and ```const```. These are under [[Immutable Values and Declarations]]. A list of available data types can be found in [[Data Types]].
