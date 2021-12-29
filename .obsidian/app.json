@@ -17,5 +17,7 @@
   "promptDelete": false,
   "alwaysUpdateLinks": false,
   "showFrontmatter": false,
-  "showLineNumber": true
+  "showLineNumber": true,
+  "legacyEditor": false,
+  "livePreview": true
 }
