@@ -90,14 +90,14 @@
   "active": "992b1a0e4f667bb8",
   "lastOpenFiles": [
     "Procedures (Functions).md",
-    "Exercises.md",
-    "Template.md",
-    "Loops.md",
     "Data Types.md",
+    "Nim Programming.md",
+    "Nim Programming.pdf",
+    "Template.md",
+    "Exercises.md",
+    "Loops.md",
     "Compilation and More.md",
     "Immutable Values and Declarations.md",
-    "If Statements.md",
-    "Nim Programming.pdf",
-    "Nim Programming.md"
+    "If Statements.md"
   ]
 }

@@ -1,3 +1,7 @@
+```toc
+style: number
+```
+-----
 # Procedures (Functions)
 Procedure are basically the Nim equivalent of what's known as "functions" in other programming languages. Apparently, this is the proper name for functions in programming languages, as they differ from mathematical functions: —
 
@@ -63,3 +67,65 @@ echo hyperNumber #Output: 105
 ```
 
 ## Uniform Function Call Syntax
+Uniform function call syntax allows many different ways of calling a function (from [Wikipedia](https://en.wikipedia.org/wiki/Uniform_Function_Call_Syntax)): —
+> **Uniform Function Call Syntax** (**UFCS**) or **Uniform Calling Syntax** (**UCS**) or sometimes **Universal Function Call Syntax** is a [programming language](https://en.wikipedia.org/wiki/Programming_language "Programming language") feature in [D](https://en.wikipedia.org/wiki/D_(programming_language) "D (programming language)") and [Nim](https://en.wikipedia.org/wiki/Nim_(programming_language) "Nim (programming language)") that allows any [function](https://en.wikipedia.org/wiki/Function_(computer_programming) "Function (computer programming)") to be called using the syntax for method calls (as in [object-oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming "Object-oriented programming")), by using the [receiver](https://en.wikipedia.org/w/index.php?title=Receiver_(object_oriented_programming)&action=edit&redlink=1 "Receiver (object oriented programming) (page does not exist)") as the first parameter, and the given arguments as the remaining parameters.
+
+Basically, the first argument of a procedure can be placed in front of the actual procedure name, so as to make certain calls more readable. For example: —
+
+```nim
+proc plus(num1, num2: int): int =
+	return num1 + num2
+
+echo 1.plus(5) #Output: 6
+```
+
+## Result variable
+When the end of a procedure has been reached, its last value is automatically assigned as the procedure's return value if no `return` statement has been added. An example of this is as follow: —
+
+```nim
+proc findBiggest(a: seq[int]): int =  
+  for number in a:
+    if number > result:
+      result = number
+  # the end of proc                   
+
+let d = @[3, -5, 11, 33, 7, -15
+echo findBiggest(d) #Output: 33
+```
+
+In this example, as the `return` type of the procedures is an integer, the `result` variable has been automatically assigned the value of `0`. The for loop then iterates through each of the sequence's numbers and changes the `result` variable's value to said number if it was bigger than the number.
+
+In the following example, which shows a procedure which will only keep the odd numbers of a sequenced passed to it, the `return` type has been defined as a `seq`; therefore, the `result` variable has been automatically declared as an empty sequence and values can be added onto it: —
+
+```nim
+proc keepOdds(nums: seq[int]): seq[int] =
+	for number in nums:
+		if number mod 2 == 1:
+			result.add(number)
+
+
+let f = @[1, 6, 4, 43, 57, 34, 98]
+echo keepOdds(f)```
+````
+
+## Forward Declaration
+Procedures must be declared before they are called, hence why the following will throw an error: —
+
+```nim
+echo 5.plus(1)
+
+proc plus(num1, num2: int): int =
+	return num1 + num2
+```
+
+To solve this, one must first tell Nim that, at some point in the code, there will be a procedure titled `plus`. This is done as follows: —
+
+```nim
+proc plus(num1, num2: int): int
+
+echo 5.plus(1)
+
+proc plus(num1, num2: int): int =
+	return num1 + num2
+```
+<div style="page-break-after: always;"></div>
