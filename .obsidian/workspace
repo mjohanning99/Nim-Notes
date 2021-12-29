@@ -9,8 +9,8 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "Procedures (Functions).md",
-            "mode": "preview",
+            "file": "Modules.md",
+            "mode": "source",
             "source": false
           }
         }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Procedures (Functions).md",
+                "file": "Modules.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,15 +89,15 @@
   },
   "active": "992b1a0e4f667bb8",
   "lastOpenFiles": [
-    "Procedures (Functions).md",
-    "Data Types.md",
+    "Modules.md",
     "Nim Programming.md",
-    "Nim Programming.pdf",
     "Template.md",
     "Exercises.md",
+    "Data Types.md",
+    "Procedures (Functions).md",
+    "Nim Programming.pdf",
     "Loops.md",
     "Compilation and More.md",
-    "Immutable Values and Declarations.md",
-    "If Statements.md"
+    "Immutable Values and Declarations.md"
   ]
 }

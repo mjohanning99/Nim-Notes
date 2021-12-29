@@ -143,3 +143,74 @@ echo hyperSeq
 100
 @[50, 20, 150, 40, 250, 60, 350, 80, 450, 100]
 ```
+
+# findMax3
+> Create a procedure `findMax3` which will return the largest of three values.
+
+```nim
+proc findMax3(num1, num2, num3: int): int = 
+  let nums: seq[int] = @[num1, num2, num2]
+
+  for num in nums: 
+    if num > result:
+      result = num
+
+echo findMax3(243, 123095, 1923)
+```
+
+## Output
+```
+123095
+```
+
+# 2D points
+> Points in 2D plane can be represented as `tuple[x, y: float]`. Write a procedure which will receive two points and return a new point which is a sum of those two points (add x’s and y’s separately).
+
+```nim
+proc addTwoPoints(p1, p2: tuple): tuple =
+  var result: tuple = (x: 0, y: 0)
+
+  result.x = p1.x + p2.x
+  result.y = p1.y + p2.y
+
+  return result
+
+let point1 = (x: 12, y: 15)
+let point2 = (x: 42, y: 123)
+
+echo addTwoPoints(point1, point2)
+```
+
+## Output
+```
+(x: 54, y: 138)
+```
+
+# Tick Tock
+> Create two procedures `tick` and `tock` which echo out the words "tick" and "tock". Have a global variable to keep track of how many times they have run, and run one from the other until the counter reaches 20. The expected output is to get lines with "tick" and "tock" alternating 20 times. (Hint: use forward declarations.)
+
+```nim
+proc tick
+proc tock
+
+var counter: int = 0
+
+proc tick() =
+  echo "tick"
+
+proc tock =
+  echo "tock"
+
+for i in 1..20:
+  if counter mod 2 == 0:
+    tick()
+    counter += 1
+  else:
+    tock()
+    counter += 1
+```
+
+## Output
+```
+tick tock tick tock tick tock tick tock tick tock tick tock tick tock tick tock tick tock tick tock 
+```

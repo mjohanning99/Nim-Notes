@@ -11,6 +11,7 @@ author: Marvin Johanning
 ![[Case Statements]]
 ![[Loops]]
 ![[Procedures (Functions)]]
+![[Modules]]
 
 %% Exercises and other back-matter stuff. %% 
 ![[Exercises]]
